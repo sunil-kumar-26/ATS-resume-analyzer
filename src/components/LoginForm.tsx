@@ -5,6 +5,7 @@ import { useForm, Controller } from "react-hook-form";
 import { loginSchema } from "../schema/Schema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Google } from "../utils/Icon";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const LoginForm = () => {
   const {
@@ -71,7 +72,8 @@ const LoginForm = () => {
                 className="btn"
                 htmlType="submit"
               >
-                Login to Dashboard
+                Login to Dashboard <IoIosArrowRoundForward size={30} />
+
               </Button>
               <div className="line-parent">
                 <div className="line" /> or continue with{" "}
@@ -85,6 +87,12 @@ const LoginForm = () => {
             </Form>
           </Card>
         </Col>
+        <div >
+
+          <div>1 child </div>
+          <div></div>
+          <div></div>
+        </div>
       </Wrapper>
     </>
   );

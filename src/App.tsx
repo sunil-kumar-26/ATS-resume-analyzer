@@ -5,6 +5,8 @@ import styled, { ThemeProvider } from "styled-components";
 import useToggleTheme from "./hooks/useToggleTheme";
 import { darkTheme, lightTheme } from "./theme/theme";
 import Login from "./pages/Login";
+import { Outlet } from "react-router-dom";
+
 
 function App() {
   const { isDarkTheme} = useToggleTheme();
@@ -13,7 +15,7 @@ function App() {
       <AppWrapper>
         <ConfigProvider locale={getAntdLanguage()}>
           <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-            <Login />
+            <Outlet/>
           </ThemeProvider>
         </ConfigProvider>
       </AppWrapper>
