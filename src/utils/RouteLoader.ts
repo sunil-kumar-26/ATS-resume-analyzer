@@ -1,18 +1,14 @@
-const loaders = {
-  home: () => import("../App"),
-  signup: () => import("../pages/SignupPage"),
-  login: () => import("../pages/LoginPage"),
-  forgotPassword: () => import("../pages/ForgotPasswordPage"),
-  verifyEmail: () => import("../pages/VerifyEmailPage"),
-  resetPassword: () => import("../pages/ResetPasswordPage"),
-  page404: () => import("../pages/Page404"),
-   chat: () => import("../pages/ChatBot"),
+const loader = {
+  landing: () => import("../pages/Landing"),
+  login:()=>import("../pages/Login"),
 };
 
-const RouteLoader = (key: keyof typeof loaders) => {
+const RouteLoader = (key: keyof typeof loader) => {
   return async () => {
-    const module = await loaders[key]();
-    return { Component: module.default };
+    const module = await loader[key]();
+    return {
+      Component: module.default,
+    };
   };
 };
 
