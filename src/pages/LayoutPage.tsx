@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Layout } from "antd";
 import SideBar from "../components/SideBar";
 import { simpleIcons } from "../utils/simpleIcons";
+import { Outlet } from "react-router-dom";
 
 const { Sider, Content } = Layout;
 
@@ -27,7 +28,7 @@ const LayoutPage = () => {
           </div>
           <SideBar collapsed={collapsed} />
         </Sider>
-        <Content>this is rajat</Content>
+        <Content><Outlet/></Content>
       </Layout>
     </LayoutWrapper>
   );
