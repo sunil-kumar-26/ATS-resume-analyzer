@@ -4,7 +4,6 @@ import { getAntdLanguage } from "./i18n";
 import styled, { ThemeProvider } from "styled-components";
 import useToggleTheme from "./hooks/useToggleTheme";
 import { darkTheme, lightTheme } from "./theme/theme";
-import Login from "./pages/Login";
 import { Outlet } from "react-router-dom";
 
 

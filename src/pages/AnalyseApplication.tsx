@@ -11,14 +11,18 @@ export const AnalyseApplication = () => {
     <PageWrapper>
       <CardContainer>
         <HeaderSection>
-          <Typography variant="h2Bold">Analyze Application</Typography>
+          <Typography variant="h4Semibold" className={"typo1"}>
+            Analyze Application
+          </Typography>
           <Typography variant="h4Regular">
             Optimize your resume for specific job roles in seconds
           </Typography>
         </HeaderSection>
 
         <FormSection>
-          <Typography variant="h5Regular" className={'resume-text'}>Resume (PDF or DOCX)</Typography>
+          <Typography variant="h5Regular" className={"resume-text"}>
+            Resume (PDF or DOCX)
+          </Typography>
 
           <StyledDragger>
             <p className="upload-icon">
@@ -28,7 +32,9 @@ export const AnalyseApplication = () => {
             <p className="upload-hint">Maximum file size 5MB</p>
           </StyledDragger>
 
-          <Typography variant="h5Regular">Target Job Description</Typography>
+          <Typography variant="h5Regular" className={"resume-text"}>
+            Target Job Description
+          </Typography>
 
           <StyledTextArea
             placeholder="Paste the full job description here to see how you match..."
@@ -43,20 +49,18 @@ export const AnalyseApplication = () => {
 };
 
 const PageWrapper = styled.div`
-  min-height: 100vh;
-//   background: linear-gradient(135deg, #0f172a, #0b1120);
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 60px 20px;
+  // padding: 20px 20px;
 `;
 
 const CardContainer = styled.div`
-  width: 520px;
-  background: #111827;
+  width: 100%;
+  background: #141F2B;
   padding: 32px;
   border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  // box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -66,6 +70,9 @@ const HeaderSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  .typo1 {
+    color: ${(p) => p.theme.body};
+  }
 
   h2 {
     color: #ffffff;
@@ -80,17 +87,17 @@ const FormSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  .resume-text{
-  color:${props=>props.theme.body} ;
+  .resume-text {
+    color: ${(props) => props.theme.subtitle};
   }
 `;
 
 const StyledDragger = styled(Dragger)`
-  background: #1f2937 !important;
+  background: #1F2831 !important;
   border: 1px dashed #374151 !important;
   border-radius: 12px !important;
   padding: 24px 16px;
-
+  width: 100%;
   .upload-icon {
     font-size: 32px;
     color: #3b82f6;
@@ -108,20 +115,20 @@ const StyledDragger = styled(Dragger)`
 `;
 
 const StyledTextArea = styled(TextArea)`
-  background: #1f2937 !important;
+  background: #1F2831 !important;
   border: 1px solid #374151 !important;
   border-radius: 12px !important;
   color: #ffffff !important;
-
+  width: 100%;
   &::placeholder {
     color: #6b7280;
   }
 `;
 
 const StyledButton = styled(Button)`
-  height: 48px;
   border-radius: 12px;
   font-weight: 600;
+  width: 100%;
   background: linear-gradient(90deg, #2563eb, #3b82f6);
   border: none;
 

@@ -1,6 +1,7 @@
 import { Col, Row } from "antd";
 import styled from "styled-components";
 import { AnalyseApplication } from "./AnalyseApplication";
+import StatsPage from "./StatsPage";
 
 const AnalyserPage = () => {
   return (
@@ -9,13 +10,13 @@ const AnalyserPage = () => {
         <Col lg={10}>
           <AnalyseApplication />
         </Col>
-        <Col lg={10}>
-          <AnalyseApplication />
-        </Col>
+        <Col lg={12}><StatsPage/></Col>
       </Row>
     </AnalyseWrapper>
   );
 };
 
 export default AnalyserPage;
-const AnalyseWrapper = styled.div``;
+const AnalyseWrapper = styled.div`
+  // background: red;
+`;
