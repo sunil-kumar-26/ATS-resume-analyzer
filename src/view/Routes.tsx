@@ -13,27 +13,27 @@ const Routes = createBrowserRouter([
         path: "login",
         lazy: RouteLoader("login"),
       },
-    ],
-  },
-  {
-    path: "/dashboard",
-    Component: LayoutPage,
-    children: [
       {
-        index: true,
-        lazy: RouteLoader("dashboard"),
-      },
-      {
-        path: "analyzer",
-        lazy: RouteLoader("analyzer"),
-      },
-      {
-        path: "history",
-        lazy: RouteLoader("history"),
-      },
-      {
-        path: "setting",
-        lazy: RouteLoader("setting"),
+        path: "dashboard",
+        Component: LayoutPage,
+        children: [
+          {
+            index: true,
+            lazy: RouteLoader("dashboard"),
+          },
+          {
+            path: "analyzer",
+            lazy: RouteLoader("analyzer"),
+          },
+          {
+            path: "history",
+            lazy: RouteLoader("history"),
+          },
+          {
+            path: "setting",
+            lazy: RouteLoader("setting"),
+          },
+        ],
       },
     ],
   },

@@ -2,6 +2,7 @@ export const darkTheme = {
   atsBackground:
     "radial-gradient( circle at top left, #0B1E2D 0%, #0F2538 40%, #12324A 100%)",
   body: "#141B2D",
+  background: "#101922",
   button: "#F6F9F6",
   chatgptSidebar: "#181818",
   buttonTitle: "#141B2D",
@@ -89,6 +90,7 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
+  background: "#101922",
   atsBackground:
     "radial-gradient( circle at top left, #0B1E2D 0%, #0F2538 40%, #12324A 100%)",
   chatgptSidebar: "#FBFBFB",

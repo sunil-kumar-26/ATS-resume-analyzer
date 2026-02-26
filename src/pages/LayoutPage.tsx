@@ -13,22 +13,24 @@ const LayoutPage = () => {
     setCollapsed(!collapsed);
   };
   const Icon = simpleIcons[collapsed ? 1 : 0];
+
   return (
     <LayoutWrapper>
-      <Layout style={{ minHeight: "100vh" }}>
+      <Layout style={{ height: "100vh" }}>
         <Sider
           collapsed={collapsed}
           className="sider"
           onClick={toggleCollapsed}
         >
           <div className="btn-container">
-            {simpleIcons && (
-              <Icon className="btn" size={24} onClick={toggleCollapsed} />
-            )}
+            {simpleIcons && <Icon className="btn" size={24} />}
           </div>
           <SideBar collapsed={collapsed} />
         </Sider>
-        <Content><Outlet/></Content>
+
+        <Content className="content">
+          <Outlet />
+        </Content>
       </Layout>
     </LayoutWrapper>
   );
@@ -37,21 +39,32 @@ const LayoutPage = () => {
 export default LayoutPage;
 
 const LayoutWrapper = styled.div`
-  background: ${(props) => props.theme.heroPageBackground};
-  .heading {
-    color: yellow !important;
-  }
+  height: 100vh;
   .sider {
-    display: flex;
-    flex-direction: column;
-    user-select: none;
+    height: 100vh;
+    overflow: hidden;
+    background: #101922;
   }
-  .btn {
-    color: white;
-    cursor: pointer;
+  .ant-layout-sider {
+    border-right: 1px solid #1e293b;
+  }
+
+  .content {
+    height: 100vh;
+    overflow-y: auto;
+    padding: 24px;
+    background: ${(p) => p.theme.background};
   }
   .btn-container {
-    padding: 12px;
-    text-align: end;
+    color: ${(p) => p.theme.body};
+    cursor: pointer;
+    display: flex;
+    padding: 6px 26px;
+    justify-content: end;
+  }
+  @media (max-width: 430px) {
+    .sider {
+      display: none;
+    }
   }
 `;
