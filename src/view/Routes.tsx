@@ -14,6 +14,10 @@ const Routes = createBrowserRouter([
         lazy: RouteLoader("login"),
       },
       {
+        path: "signup",
+        lazy: RouteLoader("signup"),
+      },
+      {
         path: "dashboard",
         Component: LayoutPage,
         children: [
