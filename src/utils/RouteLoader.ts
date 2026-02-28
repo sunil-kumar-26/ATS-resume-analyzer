@@ -1,6 +1,7 @@
 const loader = {
   landing: () => import("../pages/Landing"),
   login:()=>import("../pages/Login"),
+  signup:()=>import("../pages/Signup"),
   analyzer:()=>import('../pages/AnalyserPage'),
   history:()=>import('../pages/HistoryPage'),
   setting:()=>import('../pages/SettingPage'),
