@@ -3,8 +3,11 @@ import {
   CheckCircleOutlined,
   WarningOutlined,
   BulbOutlined,
+  BarChartOutlined,
+  RiseOutlined,
 } from "@ant-design/icons";
 import styled from "styled-components";
+import { Typography } from "../theme/AppTypography";
 
 const StatsPage = () => {
   return (
@@ -13,10 +16,13 @@ const StatsPage = () => {
         <Col xs={24} lg={12}>
           <StyledCard>
             <div className="ats-container">
+              <Typography variant="h3Semibold" className={"ats-heading"}>
+                ATS SCORE
+              </Typography>
               <Progress
                 type="circle"
-                percent={100}
-                strokeWidth={8} 
+                percent={59}
+                strokeWidth={8}
                 status="active"
                 className="progress-bar"
                 strokeColor="#22c55e"
@@ -64,12 +70,17 @@ const StatsPage = () => {
 
       <Row style={{ marginTop: "24px" }}>
         <Col span={24}>
-          <StyledCard>
-            <div className="skills-header">
-              <h3>Skills Analysis</h3>
-              <span className="updated">Last updated 2m ago</span>
-            </div>
-
+          <StyledCard
+            title={
+              <div className="skills-header">
+                <h3>
+                  <RiseOutlined className="rise-icon" />
+                  Skills Analysis
+                </h3>
+                <span className="updated">Last updated 2m ago</span>
+              </div>
+            }
+          >
             <div className="section">
               <p className="section-title green-text">CORE STRENGTHS</p>
               <div className="tags">
@@ -107,6 +118,7 @@ export default StatsPage;
 
 const StatsWrapper = styled.div`
   width: 100%;
+  // margin-top:-100px;
 `;
 
 const StyledCard = styled(Card)`
@@ -117,6 +129,11 @@ const StyledCard = styled(Card)`
 
   .ant-card-body {
     padding: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  .ant-card-head {
+    border-bottom: 1px solid #1f2831 !important;
   }
 
   .ats-container {
@@ -125,6 +142,13 @@ const StyledCard = styled(Card)`
     align-items: center;
     gap: 16px;
     text-align: center;
+  }
+  .ats-heading {
+    color: #94a3b8;
+  }
+
+  .rise-icon {
+    padding-right: 10px;
   }
 
   h3 {
@@ -135,12 +159,17 @@ const StyledCard = styled(Card)`
   .skills-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    align-items: center;
+    // margin-bottom: 20px;
   }
 
   .updated {
     font-size: 12px;
+    font-weight: 700;
     color: #6b7280;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: #1f262e;
   }
 
   .section {
@@ -167,7 +196,7 @@ const StyledCard = styled(Card)`
   }
   .ant-progress-indicator {
     color: #22c55e;
-    font-weight:900;
+    font-weight: 900;
   }
 `;
 
@@ -179,6 +208,7 @@ const SmallCard = styled(Card)`
 
   .ant-card-body {
     display: flex;
+    background: #141f2b;
     align-items: center;
     gap: 16px;
     padding: 18px;

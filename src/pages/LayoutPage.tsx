@@ -4,7 +4,7 @@ import { Layout } from "antd";
 import SideBar from "../components/SideBar";
 import { simpleIcons } from "../utils/simpleIcons";
 import { Outlet } from "react-router-dom";
-
+// import 
 const { Sider, Content } = Layout;
 
 const LayoutPage = () => {

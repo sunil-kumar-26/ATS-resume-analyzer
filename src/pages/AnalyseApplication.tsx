@@ -1,5 +1,5 @@
 import { Upload, Input, Button } from "antd";
-import { InboxOutlined } from "@ant-design/icons";
+import { InboxOutlined ,FilePdfOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import { Typography } from "../theme/AppTypography";
 
@@ -11,7 +11,7 @@ export const AnalyseApplication = () => {
     <PageWrapper>
       <CardContainer>
         <HeaderSection>
-          <Typography variant="h4Semibold" className={"typo1"}>
+          <Typography variant="h3Semibold" className={"typo1"}>
             Analyze Application
           </Typography>
           <Typography variant="h4Regular">
@@ -26,7 +26,7 @@ export const AnalyseApplication = () => {
 
           <StyledDragger>
             <p className="upload-icon">
-              <InboxOutlined />
+              <FilePdfOutlined/>
             </p>
             <p className="upload-text">Click to upload or drag and drop</p>
             <p className="upload-hint">Maximum file size 5MB</p>
@@ -38,7 +38,7 @@ export const AnalyseApplication = () => {
 
           <StyledTextArea
             placeholder="Paste the full job description here to see how you match..."
-            rows={6}
+            rows={8}
           />
 
           <StyledButton type="primary">Analyze Match →</StyledButton>
@@ -60,7 +60,7 @@ const CardContainer = styled.div`
   background: #141F2B;
   padding: 32px;
   border-radius: 16px;
-  // box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   gap: 24px;
